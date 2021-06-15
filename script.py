@@ -35,13 +35,6 @@ prior_fwhm = 60
 #use these two lines only when making the first image (0% gain error)
 emptyprior = eh.image.make_square(obs, npix, fov)
 flatprior = emptyprior.add_flat(zbl)
-#use this line when making images with >0% gain error. I chose
-#to name my files SgrA*_img[num]_correct.txt', and num=1 is the 0% gain error,
-#num=2 is the 5% gain error, etc. The prior image for the current image being
-#created should be the previous image you made (assuming creation in ascending
-#level of gain error)
-
-#prior=eh.image.load_txt(‘SgrA*_img[priorimagenumber]_correct.txt’)
 gaussprior = emptyprior.add_gauss(zbl, (prior_fwhm, prior_fwhm, 0, 0, 0))
 
 avg_time=600
