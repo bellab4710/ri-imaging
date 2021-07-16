@@ -1,6 +1,5 @@
 import numpy as np
 from PIL import Image
-import astropy.io.fits as fits
 rng = np.random.default_rng(12345)
 #determines the seeds for the following images so the outputs are reproducible
 rints=rng.integers(low=1, high=10000, size=10)
@@ -19,7 +18,7 @@ for j in range(10):
         xcord=round(x[i])
         ycord=round(y[i])
         base[xcord][ycord] = [255,255,255]
-    hdu=fits.PrimaryHDU(base)
-    hdu.writeto('scatPoint'+str(j+1)+'.fits')
+    base = base[:,:,2] #makes array black and white so that np can save as a text file
+    np.savetxt('scat'+str(j+1)+'.txt',base)
     img = Image.fromarray(base)
     img.show()
