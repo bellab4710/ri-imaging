@@ -21,4 +21,4 @@ for j in range(10):
     hdu=fits.PrimaryHDU(base)
     hdu.writeto('scatPoint'+str(j+1)+'.fits')
     img = Image.fromarray(base)
-    img.show(
+    img.show()
