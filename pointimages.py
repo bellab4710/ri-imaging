@@ -1,5 +1,6 @@
 import numpy as np
 from PIL import Image
+import astropy.io as fits
 rng = np.random.default_rng(12345)
 #determines the seeds for the following images so the outputs are reproducible
 rints=rng.integers(low=1, high=10000, size=10)
