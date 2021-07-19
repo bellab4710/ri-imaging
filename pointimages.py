@@ -18,7 +18,7 @@ for j in range(10):
         xcord=round(x[i])
         ycord=round(y[i])
         base[xcord][ycord] = [255,255,255]
-    base = base[:,:,2] #makes array black and white so that np can save as a text file
-    np.savetxt('scat'+str(j+1)+'.txt',base)
+    hdu=fits.PrimaryHDU(base)
+    hdu.writeto('scatPoint'+str(j+1)+'.fits')
     img = Image.fromarray(base)
-    img.show()
+    img.show(
