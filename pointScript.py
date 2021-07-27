@@ -71,3 +71,9 @@ def makeIm(imnum):
 
   outname='scat'+str(imnum)+'.txt'
   out.save_txt(outname)
+def main():
+  for i in range(10):
+    makeIm(i+1)
+    
+if __name__ == '__main__':
+    main()
