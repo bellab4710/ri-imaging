@@ -8,7 +8,7 @@ from   ehtim.calibrating import self_cal as sc
 import ehtim.io.load
 
 def makeIm(imnum):
-  im = ehtim.io.load.load_fits('../pointImages/scatPoint'+str(imnum)+'.fits',punit="uas")
+  im = ehtim.io.load.load_im_fits('../pointImages/scatPoint'+str(imnum)+'.fits',punit="uas")
   eht = eh.array.load_txt('./arrays/EHT2017.txt')
 
   tint_sec = 30
