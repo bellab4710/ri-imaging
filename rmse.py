@@ -15,7 +15,7 @@ def main():
     val = rmse(imvec1, imvec2)
     file.write("RMSE for Image"+str(i+1)+": "+str(val)+"\n")
     sum += val
-    file.write("Average RMSE:",sum/10)
+    file.write("Average RMSE: "+str(sum/10))
   file.close()
  
 if __name__ == '__main__':
